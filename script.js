@@ -8,9 +8,12 @@ const fullScreenBtn = document.querySelector('.full-screen-btn')
 
 
 document.addEventListener('keydown', e =>{
-    console.log(e.key)
+    const tagName = document.activeElement.tagName.toLowerCase()
+    if(tagName === 'input') return;
+
     switch(e.key.toLowerCase()){
         case " ":
+            if(tagName === 'button') return
         case "k":
            togglePlay()
            break
